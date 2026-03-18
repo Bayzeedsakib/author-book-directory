@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Author Details</h1>
+
+<form method="post">
+
+    <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="Edit name" />
+    <br />
+    <br />
+    <input type="text" name="Age" value="@Model.Age" class="form-control" placeholder="Edit age" /><br /><br />
+
+    <button type="submit">Update</button>
+
+</form>
+
