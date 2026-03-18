@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Book Things</h1>
+
+<form method="post">
+
+    <input type="text" name="Name" value="@Model.Name" class="form-control" placeholder="update book name" /><br />
+    <input type="text" name="Price" value="@Model.Price" class="form-control" placeholder="update book price" /><br />
+    <input type="text" name="Isbn" value="@Model.Isbn" class="form-control" placeholder="update book isbn" /><br />
+    <select name="AuthorId" class="form-control">
+        @foreach (var item in ViewBag.Authors)
+        {
+            <option value="@item.Id" selected="@(item.Id == Model.AuthorId)">
+                @item.Name
+            </option>
+        }
+    </select><br />
+    <input type="text" name="Description" value="@Model.Description" class="form-control" placeholder="update book description" /><br /><br />
+
+    <button type="submit">Update</button>
+</form>
+

@@ -12,4 +12,5 @@ public partial class Author
     public int Age { get; set; }
 
     public virtual ICollection<Book> Books { get; set; } = new List<Book>();
+    //public object Author { get; internal set; }
 }

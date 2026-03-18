@@ -17,6 +17,9 @@
         <th>Isbn</th>
         <th>Why read it?</th>
         <th>Author_id</th>
+        <th>Details</th>
+        <th>Edit Details</th>
+        <th>Delete</th>
     </tr>
 
     @foreach(var item in Model)
@@ -27,7 +30,19 @@
             <td>@item.Price</td>
             <td>@item.Isbn</td>
             <td>@item.Description</td>
-            <td>@item.AuthorId</td>
+            <td>@item.Author.Name</td>
+            <td><a href="/Book/Details/@item.Id">Details</a></td>
+            <td><a href="/Book/Edit/@item.Id">Edit</a></td>
+
+            <td>
+                <form method="post" action="/Book/Delete">
+                    <input type="hidden" name="id" value="@item.Id"/>
+                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                        Delete
+                    </button>
+                </form>
+            </td>
+
         </tr>
     }
 
