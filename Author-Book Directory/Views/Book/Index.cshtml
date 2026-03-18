@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@if(TempData["Msg"] != null)
+{
+    <p class="alert alert-success">@TempData["Msg"]</p>
+}
+
+<h1>Index Page</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Isbn</th>
+        <th>Why read it?</th>
+        <th>Author_id</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Isbn</td>
+            <td>@item.Description</td>
+            <td>@item.AuthorId</td>
+        </tr>
+    }
+
+</table>
+
+
+
+

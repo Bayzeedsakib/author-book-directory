@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Book</h1>
+
+<form method="post">
+
+    <input type="text" name="Name" placeholder="Enter book name"/> <br /><br />
+    <input type="text" name="Price" placeholder="Enter book's price"/> <br /><br />
+    <input type="text" name="Isbn" placeholder="Enter Isbn number"/> <br /><br />
+    <input type="text" name="Description" placeholder="Why read it"/> <br /><br />
+    <select name="AuthorId">
+        @foreach (var a in ViewBag.Authors)
+        {
+            <option value="@a.Id">@a.Name</option>
+        }
+    </select> <br /><br />
+
+    <button type="submit">Create</button>
+
+</form>
+
